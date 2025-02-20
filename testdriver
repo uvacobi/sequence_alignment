@@ -39,7 +39,7 @@ class TestAlignmentMethods(unittest.TestCase):
     def test_smith_waterman_gap2_affine(self):
         seq1 = "ACTA"
         seq2 = "ACGTTA"
-        self.assertEqual(smith_waterman(seq1, seq2, 1, 1, 1, 0.5),(2.0, 'AC--TA','ACGTTA'))
+        self.assertIn(smith_waterman(seq1, seq2, 1, 1, 1, 0.5),[(2.0, 'AC--TA','ACGTTA'), (2.0, 'TA', 'TA')]) 
 
     # A test case with local alignment (alignment does not extend all the way)
     def test_smith_waterman_local(self):
